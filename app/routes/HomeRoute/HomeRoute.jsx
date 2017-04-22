@@ -1,19 +1,21 @@
 //-----------  Imports  -----------//
 
-import React         from 'react'
+import Block      from './styles'
 
-import kikehSongs    from 'data/kikeh'
+import kikehSongs from 'data/kikeh'
 
-import DemoForm      from 'containers/DemoForm'
+import chunk      from 'lodash/chunk'
 
-import SongBlock     from 'components/SongBlock'
-import PageWrapper   from 'components/PageWrapper'
-import BoundsWrapper from 'components/BoundsWrapper'
+import React      from 'react'
+
+import SongBlock  from 'components/SongBlock'
+import PrintPage  from 'components/PrintPage'
 
 //-----------  Definitions  -----------//
 
-const title       = 'Homepage'
-const description = 'Welcome to this page.'
+const title       = 'Setlist'
+const description = 'Kikeh Mato'
+const perPage     = 8
 
 //-----------  Component  -----------//
 
@@ -22,14 +24,18 @@ class HomeRoute extends React.Component {
   render(){
     const { searchActions, ...props } = this.props
 
+    const groups = chunk(kikehSongs, perPage)
+
     return (
-      <PageWrapper title={title} description={description}>
-        <BoundsWrapper type='block'>
-          {kikehSongs && kikehSongs.map((song, index) => (
-            <SongBlock key={index} song={song} />
-          ))}
-        </BoundsWrapper>
-      </PageWrapper>
+      <Block.Page title={title} description={description}>
+        {groups.map((songs, index) => (
+          <PrintPage key={index} sections={perPage} pgCount={groups.length} pgNumber={index+1}>
+            {songs.map((song, index) => (
+              <SongBlock key={index} song={song} />
+            ))}
+          </PrintPage>
+        ))}
+      </Block.Page>
     )
   }
 }

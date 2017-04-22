@@ -11,10 +11,19 @@ const Staff = styled.div`
   width      : 100%;
 
   svg {
-    margin: -2.5em 0 -2em -1.71em;
+    margin         : -2em 0 -1.5em -3.5%;
+    pointer-events : none;
 
-    text:last-child {
-      display: none;
+    path:nth-child(-n+6) {
+      stroke: ${vars.gray};
+    }
+
+    text {
+      font-size: 12pt;
+      font-weight: bold;
+      &:last-child {
+        display: none;
+      }
     }
   }
 `

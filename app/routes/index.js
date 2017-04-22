@@ -23,11 +23,5 @@ export default function createRoutes(store){
     getComponent(nextState, cb){
       import('routes/HomeRoute').then(loadModule(cb)).catch(err)
     },
-  },{
-    path : '/about',
-    name : 'about',
-    getComponent(nextState, cb){
-      import('routes/AboutRoute').then(loadModule(cb)).catch(err)
-    },
   }]
 }

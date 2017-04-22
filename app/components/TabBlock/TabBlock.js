@@ -2,11 +2,14 @@
 
 import Tab                     from './styles'
 
-import $ from 'jquery'
+import $                       from 'jquery'
 import { Vex, VexTab, Artist } from 'vextab'
 
 import React, { PropTypes }    from 'react'
 import { findDOMNode }         from 'react-dom'
+
+import { paperWidthMM,
+         paperHeightMM }       from 'components/PrintPage'
 
 //-----------  Definitions  -----------//
 
@@ -15,6 +18,9 @@ const Backend  = Renderer.Backends.SVG
 
 const options  = ''
 const tabstave = 'tabstave notation=false'
+
+const pxScale  = 0.67
+const pxWidth  = paperWidthMM * 3.95
 
 //-----------  Component  -----------//
 
@@ -33,7 +39,7 @@ class TabBlock extends React.Component {
   }
 
   renderStaff = (tab) => {
-    const artist = new Artist(0, 0, 1053, { scale: 0.67 })
+    const artist = new Artist(0, 0, (pxWidth/pxScale), { scale: pxScale })
     const vextab = new VexTab(artist).parse([options, tabstave, tab].join('\n'))
 
     $(this.staffRef).find('svg:first').remove()

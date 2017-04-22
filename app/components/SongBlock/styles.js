@@ -7,15 +7,7 @@ import vars   from 'styles/variables'
 //-----------  Song Block  ----------- */
 
 const Wrapper = styled.div`
-  overflow       : hidden;
-  padding-bottom : 1.6em;
-  padding-top    : 1.6em;
-
-  @meida print {
-    &:nth-child(7n) {
-      margin-bottom: 4em;
-    }
-  }
+  overflow: hidden;
 `
 
 const Header = styled.header`

@@ -19,7 +19,7 @@ const Elem = styled.div`
   z-index        : 1;
 
   @media print {
-    background : ${vars.white};
+    background: ${vars.white};
   }
 `
 

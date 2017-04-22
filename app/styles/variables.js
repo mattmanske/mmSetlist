@@ -36,7 +36,7 @@ export default Object.assign({}, allColors, {
   border           : `1px solid ${helpers.toRgb(allColors.grayLighter, 0.75)}`,
   borderDark       : `1px solid ${helpers.toRgb(allColors.grayLight, 0.75)}`,
   borderLight      : `1px solid ${helpers.toRgb(allColors.grayLightest, 0.75)}`,
-  shadow           : '0.25em 0.25em 0.75em rgba(0, 0, 0, 0.05)',
+  shadow           : '0.33em 0.3em 1.75em rgba(0, 0, 0, 0.08)',
   transition       : '0.15s ease-in-out',
 
   gutter           : `${gutter}em`,

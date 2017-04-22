@@ -1,14 +1,22 @@
 //-----------  Imports  -----------//
 
-import styled from 'styled-components'
+import styled      from 'styled-components'
 
-import vars   from 'styles/variables'
+import PageWrapper from 'components/PageWrapper'
+
+import vars        from 'styles/variables'
 
 //-----------  Page Wrapper  ----------- */
 
-const Elem = styled.div`
+const Page = styled(PageWrapper)`
+  padding    : ${vars.gutterLg};
+  text-align : center;
+
+  @media print {
+    padding: 0;
+  }
 `
 
 //-----------  Exports  ----------- */
 
-export default { Elem }
+export default { Page }

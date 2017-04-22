@@ -48,7 +48,7 @@ openSansObserver.load().then(() => {
 
 const initialState   = {}
 const browserHistory = useRouterHistory(createHistory)({
-  basename: (isProd) ? '/' : '/'
+  basename: (isProd) ? '/mmSetlist' : '/'
 })
 
 const store = configureStore(initialState, browserHistory)
