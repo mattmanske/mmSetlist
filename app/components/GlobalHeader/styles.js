@@ -8,7 +8,7 @@ import mixins from 'styles/mixins'
 //-----------  Global Header  ----------- */
 
 const Elem = styled.header`
-  background : ${props => props.inverse ? 'transparent' : 'white'};
+  background : transparent;
   color      : ${props => props.inverse && 'white'};
   font-size  : 1em;
   position   : relative;
@@ -25,6 +25,10 @@ const Elem = styled.header`
 
   a, small {
     ${ mixins.antiAliased() }
+  }
+
+  @media print {
+    display: none;
   }
 `
 

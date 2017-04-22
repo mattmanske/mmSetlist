@@ -20,9 +20,9 @@ const maxWidth = (props) => {
 const Elem = styled.div`
   margin-left  : auto;
   margin-right : auto;
-  max-width    : ${props => maxWidth(props)};
   padding      : ${vars.gutterLg};
   position     : relative;
+  width        : 670px;
 `
 
 //-----------  Exports  ----------- */

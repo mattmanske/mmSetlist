@@ -2,8 +2,11 @@
 
 import React         from 'react'
 
+import kikehSongs    from 'data/kikeh'
+
 import DemoForm      from 'containers/DemoForm'
 
+import SongBlock     from 'components/SongBlock'
 import PageWrapper   from 'components/PageWrapper'
 import BoundsWrapper from 'components/BoundsWrapper'
 
@@ -21,10 +24,10 @@ class HomeRoute extends React.Component {
 
     return (
       <PageWrapper title={title} description={description}>
-        <BoundsWrapper type='compact'>
-          <h1>Homepage</h1>
-
-          <DemoForm />
+        <BoundsWrapper type='block'>
+          {kikehSongs && kikehSongs.map((song, index) => (
+            <SongBlock key={index} song={song} />
+          ))}
         </BoundsWrapper>
       </PageWrapper>
     )

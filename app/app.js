@@ -4,6 +4,7 @@ import 'babel-polyfill'
 
 import 'sanitize.css/sanitize.css'
 import './styles/globals'
+import 'vextab/releases/vextab.css'
 
 import 'file-loader?name=[name].[ext]!./static/.htaccess'
 import '!file-loader?name=[name].[ext]!./static/favicon.ico'

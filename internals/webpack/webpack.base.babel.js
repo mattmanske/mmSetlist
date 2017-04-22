@@ -29,6 +29,9 @@ module.exports = (options) => ({
       include : /node_modules/,
       loaders : ['style-loader', 'css-loader'],
     }, {
+      test   : /\.coffee$/,
+      loader : 'coffee-loader'
+    }, {
       test   : /\.(eot|svg|ttf|woff|woff2)$/,
       loader : 'file-loader',
     }, {
