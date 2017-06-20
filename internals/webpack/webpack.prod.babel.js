@@ -5,7 +5,7 @@ const OfflinePlugin = require('offline-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const publicPath = '/'
+const publicPath = '/mmSetlist/'
 
 module.exports = require('./webpack.base.babel')({
   // In production, we skip all hot-reloading stuff
